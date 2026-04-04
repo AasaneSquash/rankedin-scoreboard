@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Squash Resultattavle V2</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- DESIGN 1: PÅGÅENDE KAMP -->
+    <div id="live-board" class="board">
+        
+        <!-- Spiller 1 -->
+        <div class="player-row">
+            <div class="player-name" id="p1-name">Pending</div>
+            <div class="serve-dot active" id="p1-serve"></div>
+            <div class="score-box set-score" id="p1-sets">0</div>
+            <div class="score-box game-score" id="p1-points">0</div>
+        </div>
+
+        <!-- Spiller 2 -->
+        <div class="player-row">
+            <div class="player-name" id="p2-name">Pending</div>
+            <div class="serve-dot" id="p2-serve"></div>
+            <div class="score-box set-score" id="p2-sets">0</div>
+            <div class="score-box game-score" id="p2-points">0</div>
+        </div>
+
+        <!-- Bunnlinje (Turnering og Tid) -->
+        <div class="bottom-bar">
+            <img src="RANKEDIN_logo.jpg" alt="Rankedin Logo" id="tourney-logo">
+            <div id="match-time">24:11</div>
+        </div>
+
+    </div>
+
+    <!-- DESIGN 2: MELLOM KAMPER -->
+    <div id="intermission-board" class="board" style="display: none;">
+        
+        <!-- FORRIGE KAMP (Lys grå bakgrunn) -->
+        <div class="prev-match-section">
+            <div class="intermission-top-bar">
+                <div class="intermission-label">PREVIOUS</div>
+                <div class="intermission-duration" id="prev-duration">DURATION: - min</div>
+            </div>
+
+            <!-- Her inne vil JavaScript bygge spiller-radene og poeng-kolonnene -->
+            <div class="prev-match-content" id="prev-match-content">
+                <!-- Data settes inn her -->
+            </div>
+        </div>
+
+        <!-- NESTE KAMP (Mørk blå bakgrunn) -->
+        <div class="next-match-section">
+            <div class="intermission-top-bar">
+                <div class="intermission-label text-white">NEXT ON COURT</div>
+                <div class="intermission-time" id="next-time">TIME: -</div>
+            </div>
+
+            <!-- Spillere mot hverandre -->
+            <div class="next-match-players" id="next-match-players">
+                Spiller1 <span class="vs">vs</span> Spiller2
+            </div>
+
+            <!-- Bunnlinje med logo og klasse -->
+            <div class="next-match-footer">
+                <img src="RANKEDIN_logo.jpg" alt="Rankedin Logo" class="intermission-logo">
+                <div class="next-match-class" id="next-class">CLASS: -</div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>

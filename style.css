@@ -1,0 +1,230 @@
+body {
+    width: 1920px;
+    height: 1080px;
+    margin: 0;
+    padding: 40px; /* Litt luft fra kantene på skjermen */
+    display: flex;
+    justify-content: flex-start; /* Plasserer den til venstre */
+    align-items: flex-start; /* Plasserer den på toppen */
+    background-color: #c9b38bd8; /* Husk å bytte til transparent for strømming */
+    /* background-color: #00b140; /* Chroma Key Grønn for testing */
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+/* Felles for begge tavlene */
+.board {
+    display: flex;
+    flex-direction: column;
+    /* box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); */
+}
+
+/* --- DESIGN 1: LIVE MATCH --- */
+#live-board {
+    background-color: #ebebeb; /* Lys grå bakgrunn */
+    /* border: 2px solid #000; Valgfri tynn ramme rundt hele, fjern hvis du ikke vil ha den */
+    width: 450px; /* Fast bredde på tavlen */
+}
+
+.player-row {
+    display: flex;
+    align-items: center;
+    padding: 5px 8px;
+    height: 50px;
+}
+
+.player-name {
+    /* flex-grow: 1;  */
+    font-size: 42px;
+    font-weight: 700; 
+    color: #000;
+    
+    /* Fiksen for lange navn og linjeskift: */
+    white-space: nowrap; /* Forbyr teksten å hoppe til neste linje */
+    overflow: hidden; /* Kutter av alt som er lengre enn boksen */
+    text-overflow: ellipsis; /* Legger automatisk til "..." på slutten */
+    max-width: 285px; /* Stopp-grensen. Juster denne opp/ned hvis prikkene kommer for tidlig/sent */
+}
+
+.serve-dot {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: #ff0000;
+
+    /* Dette er magien som skyver alt til høyre: */
+    margin-left: auto;
+    margin-right: 1px;
+
+    opacity: 0; /* Skjult som standard */
+}
+
+.serve-dot.active {
+    opacity: 1;
+}
+
+.score-box {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    font-weight: 800;
+    margin-left: 15px;
+}
+
+.set-score {
+    background-color: #ebebeb;
+    color: #000;
+    border: 1px solid #000;
+}
+
+.game-score {
+    background-color: #2B3F76; /* Mørk blå */
+    color: #fff;
+}
+
+.bottom-bar {
+    height: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2B3F76;
+    color: #fff;
+    padding: 5px 10px;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+/* Logo i bunnlinjen */
+#tourney-logo {
+    height: 34px; /* Tilpasser seg høyden på fonten i bunnlinjen */
+    width: auto; /* Sørger for at logoen ikke blir dratt ut av proporsjoner */
+}
+
+
+
+/* --- DESIGN 2: MELLOM KAMPER --- */
+#intermission-board {
+    width: 500px; /* Samme bredde som den gamle, kan gjøres bredere hvis ønskelig */
+    /* box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); */
+}
+
+.prev-match-section {
+    background-color: #ebebeb; /* Lys grå */
+    padding: 15px 20px;
+    color: #2B3F76; /* Mørkeblå tekst */
+}
+
+.next-match-section {
+    background-color: #2B3F76; /* Mørkeblå */
+    padding: 15px 20px 20px 20px;
+    color: #fff;
+}
+
+.intermission-top-bar {
+    display: flex;
+    justify-content: space-between;
+    font-size: 24px;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+.text-white {
+    color: #fff;
+}
+
+/* Dynamisk innhold for Forrige Kamp */
+.prev-match-content {
+    display: flex;
+    flex-direction: column;
+    gap: 5px; /* Avstand mellom radene */
+}
+
+.prev-row {
+    display: flex;
+    align-items: center;
+    font-size: 26px;
+    font-weight: 800;
+}
+
+.prev-name {
+    flex: 1; /* Navnet tar plassen til venstre */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-right: 15px;
+}
+
+.prev-scores-container {
+    display: flex;
+    gap: 15px; /* Dynamisk avstand mellom kolonnene */
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 15px; /* Avstand før den mørkeblå boksen med sett-score */
+}
+
+.prev-score-col {
+    width: 24px;
+    text-align: center;
+}
+
+.prev-set-total {
+    background-color: #2B3F76;
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+}
+
+/* Vinnerfarger */
+.winner-color {
+    color: #299bc5; /* Den spenstige lyseblå fargen */
+}
+.loser-color {
+    color: #000; /* Svart tekst for taperen */
+}
+
+/* Neste Kamp styling */
+.next-match-players {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 700;
+    margin: 20px 0;
+}
+
+.vs {
+    font-weight: 400;
+    font-size: 22px;
+    margin: 0 10px;
+    text-transform: lowercase;
+}
+
+.next-match-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: 15px;
+}
+
+.intermission-logo {
+    height: 24px;
+    width: auto;
+}
+
+.next-match-class {
+    font-size: 22px;
+    font-weight: 800;
+}
+
+/* Håndtering av tomme kamper (Null) */
+.empty-message {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 700;
+    padding: 15px 0;
+    color: inherit;
+}
