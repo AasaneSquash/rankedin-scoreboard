@@ -6,7 +6,7 @@ body {
     display: flex;
     justify-content: flex-start; /* Plasserer den til venstre */
     align-items: flex-start; /* Plasserer den på toppen */
-    background-color: #c9b38bd8; /* Husk å bytte til transparent for strømming */
+    background-color: transparent; /* Husk å bytte til transparent for strømming */
     /* background-color: #00b140; /* Chroma Key Grønn for testing */
     font-family: 'Roboto Condensed', sans-serif;
 }
