@@ -34,7 +34,11 @@ async function initScoreboard() {
     function formatTime(totalSeconds) {
         const minutes = Math.floor(totalSeconds / 60);
         const seconds = totalSeconds % 60;
-        return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+
+        const minString = minutes.toString().padStart(2, '0');
+        const secString = seconds.toString().padStart(2, '0');
+
+        return minString + ':' + secString;
     }
 
     async function updateScoreboard() {
@@ -83,7 +87,7 @@ async function initScoreboard() {
                 }
 
                 // Oppdater Turnering/Klasse Info og Tid
-                document.getElementById('tourney-info').innerText = match.base.className || "SQUASH";
+                // document.getElementById('tourney-info').innerText = match.base.className || "SQUASH";
                 document.getElementById('match-time').innerText = formatTime(match.state.totalDurationInSeconds);
 
             // --- HVIS INGEN KAMP PÅGÅR (MELLOM KAMPER) ---
@@ -174,7 +178,7 @@ async function initScoreboard() {
     }
 
     updateScoreboard();
-    setInterval(updateScoreboard, 3000);
+    setInterval(updateScoreboard, 1000);
 }
 
 initScoreboard();
