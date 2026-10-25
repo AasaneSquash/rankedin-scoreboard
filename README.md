@@ -14,7 +14,7 @@ Prosjektet er satt opp for å hostes via GitHub Pages (eller lignende tjenester)
 **Grunnformat:**
 
 ```text
-[https://aasanesquash.github.io/rankedin-scoreboard/?tournamentID=](https://aasanesquash.github.io/rankedin-scoreboard/?tournamentID=)[ID]&court=[BANENUMMER]
+https://aasanesquash.github.io/rankedin-scoreboard/?tournamentID=ID&court=BANENUMMER
 ```
 
 ## Hvor finner jeg turnerings-ID?
@@ -24,7 +24,7 @@ Du finner turnerings-ID-en i nettadressen (URL-en) når du er inne på turnering
 **Eksempel:**
 
 ```text
-[https://www.rankedin.com/en/tournament/4997/senior-nm-squash-2021](https://www.rankedin.com/en/tournament/4997/senior-nm-squash-2021)
+https://www.rankedin.com/en/tournament/4997/senior-nm-squash-2021
 ```
 
 I denne lenken er turnerings-ID-en **4997**.
@@ -32,7 +32,7 @@ I denne lenken er turnerings-ID-en **4997**.
 For å bruke denne spesifikke turneringen for bane 1 i resultattavlen, setter du sammen URL-en slik:
 
 ```text
-[https://aasanesquash.github.io/rankedin-scoreboard/?tournamentID=4997&court=1](https://aasanesquash.github.io/rankedin-scoreboard/?tournamentID=4997&court=1)
+https://aasanesquash.github.io/rankedin-scoreboard/?tournamentID=4997&court=1
 ```
 
 ## Utvikler, datakilde og opphav
